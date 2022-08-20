@@ -1,0 +1,27 @@
+<h1> Create a new game of your choice </h1>
+
+<form action="/game/create" method="post">
+<label for="">Name</label>
+<input type="text" name="name" id="name">
+
+<label for="genre" id="genre">Genre</label>
+<input type="genre" name="genre" id="genre">
+
+<label for="image">Image</label>
+<input type="text" name="image" id="image">
+
+<label for="description">Description</label>
+<input type="description" name="description" id="description">
+
+<label for="rating">Rating</label>
+<input type="rating" name="rating" id="rating">
+
+
+
+{{!-- <label for="rating">Rating</label>
+<input type="range" min="1" max="5" id="myRange"> --}}
+
+
+
+    <button type="submit">Create game</button>
+</form>

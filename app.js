@@ -19,7 +19,7 @@ const app = express();
 require("./config")(app);
 
 // Requiring sessions.config 
-require("./config/sessions.config")(app);
+// require("./config/sessions.config")(app);
 
 // Route handling
 const index = require("./routes/index.routes");
