@@ -23,7 +23,7 @@ router.post('/signup', (req, res) => {
         return;
     }
 
-    //Bcrypt User Generation
+    // Bcrypt User Generation
     bcrypt
         .genSalt(10)
         .then(salt => bcrypt.hash(password, salt))
