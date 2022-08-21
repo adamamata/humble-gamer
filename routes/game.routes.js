@@ -55,4 +55,15 @@ router.post("/:gameId/edit", (req, res) => {
         .catch(err => console.error(err));
   
 })
+
+router.post("/:gameId/delete", (req, res) => {
+    const { gameId } = req.params;
+    const { name, genre, image, description, rating } = req.body;
+    Game.findByIdAndDelete( gameId, { name, genre, image, description, rating  })
+    .then(() => {
+        res.redirect('/game/list')
+    })
+    .catch(err => console.log(err));
+
+})
 module.exports = router;
