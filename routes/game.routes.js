@@ -29,11 +29,30 @@ Game.create({name, genre, image, description, rating})
 
 router.get("/:gameId", (req, res) => {
     const { gameId } = req.params;
-    Game.findOne({_id: gameId})
+    Game.findById({_id: gameId})
     .then(game => {
         res.render('game/game-details', { game })
     })
     .catch(error => console.log(error));
 })
 
+router.get("/:gameId/edit", (req, res) => {
+    const { gameId } = req.params;
+    Game.findById({_id: gameId})
+    .then(game => {
+        res.render('game/edit-game', { game })
+    })
+    .catch(error => console.log(error));
+})
+
+router.post("/:gameId/edit", (req, res) => {
+    const { gameId } = req.params;
+    const { name, genre, image, description, rating } = req.body;
+        Game.findByIdAndUpdate( gameId, { name, genre, image, description, rating  })
+        .then(() => {
+            res.redirect('/game/list');
+        })
+        .catch(err => console.error(err));
+  
+})
 module.exports = router;
