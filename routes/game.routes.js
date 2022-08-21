@@ -9,7 +9,7 @@ const Game = require("../models/Game.model");
 router.get("/list", (req, res) => {
     Game.find()
     .then(games => {
-        res.render('game/game-list', games)
+        res.render('game/game-list', { games })
     })
     .catch(err => console.log(err))
 })
@@ -31,7 +31,7 @@ router.get("/game:Id", (req, res) => {
     const {gameId} = req.params
     Game.findOne({id: gameId})
     .then(game => {
-        res.render('game/game-details', game)
+        res.render('game/game-details', { game })
     })
     .catch(error => console.log(error));
 })

@@ -1,4 +1,9 @@
 <h1> List of games</h1>
 
-{{#each game}}
-<h3>name of game</h3>
+{{#each games}}
+<h3> <a href="/game/{{this._id}}"> {{ name }} </a></h3>
+<img src="{{image}}">
+<p>Genre: {{genre}}</p>
+<p>Description: {{description}}</p>
+<p>Rating: {{rating}}</p>
+{{/each}}
