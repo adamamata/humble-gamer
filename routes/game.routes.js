@@ -5,7 +5,6 @@ const router = require("express").Router();
 
 const Game = require("../models/Game.model");
 
-
 router.get("/list", (req, res) => {
     Game.find()
     .then(games => {

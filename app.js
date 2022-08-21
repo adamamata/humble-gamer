@@ -17,17 +17,21 @@ const app = express();
 
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
+
+
+// Requiring sessions.config 
 require("./config/sessions.config")(app);
 
 // Route handling
 const index = require("./routes/index.routes");
 app.use("/", index);
 
+const authRouter = require("./routes/auth.routes");
+app.use("/auth", authRouter);
+
 const gameRouter = require("./routes/game.routes");
 app.use("/game", gameRouter);
 
-const authRoute = require("./routes/auth.routes");
-app.use("/auth", authRoute);
 
 // Error handling
 require("./error-handling")(app);
