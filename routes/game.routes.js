@@ -1,12 +1,13 @@
 
 const router = require("express").Router();
-
-//middleware to be added here
-
 const Game = require("../models/Game.model");
+const User = require("../models/User.model");
+const Comment = require("../models/Comment.model");
+const { isLoggedIn } = require("../middleware/route-guard");
+const { isLoggedOut } = require("../middleware/route-guard");
 
 // GET -list-
-router.get("/list", (req, res) => {
+router.get("/list", isLoggedIn, (req, res) => {
     Game.find()
     .then(games => {
         res.render('game/game-list', { games })
@@ -15,7 +16,7 @@ router.get("/list", (req, res) => {
 });
 
 // GET -create-
-router.get("/create", (req, res) => {
+router.get("/create", isLoggedIn, (req, res) => {
     res.render('game/add-game')
 });
 
@@ -30,13 +31,13 @@ Game.create({name, genre, image, description, rating})
 });
 
 // GET -:gameId- 
-router.get("/:gameId", (req, res) => {
+router.get("/:gameId", isLoggedIn, (req, res) => {
     const { gameId } = req.params;
     Game.findOne({_id: gameId})
-    .then(game => {
-        res.render('game/game-details', { game })
-    })
-    .catch(error => console.log(error));
+        .then(game => {
+            res.render('game/game-details', { game })
+        })
+        .catch(error => console.log(error));
 });
 
 module.exports = router;
