@@ -25,6 +25,9 @@ require("./config/sessions.config")(app);
 const index = require("./routes/index.routes");
 app.use("/", index);
 
+const authRoute = require("./routes/auth.routes");
+app.use("/auth", authRoute);
+
 // Error handling
 require("./error-handling")(app);
 
