@@ -40,4 +40,25 @@ router.get("/:gameId", isLoggedIn, (req, res) => {
         .catch(error => console.log(error));
 });
 
+// GET -:gameId/edit-
+router.get("/:gameId/edit", isLoggedIn, (req, res) => {
+    const { gameId } = req.params;
+    Game.findById({_id: gameId})
+    .then(game => {
+        res.render('game/edit-game', { game })
+    })
+    .catch(error => console.log(error));
+})
+
+// POST -:gameId/edit-
+router.post("/:gameId/edit", (req, res) => {
+    const { gameId } = req.params;
+    const { name, genre, image, description, rating } = req.body;
+        Game.findByIdAndUpdate( gameId, { name, genre, image, description, rating  })
+        .then(() => {
+            res.redirect('/game/list');
+        })
+        .catch(err => console.error(err));
+  
+})
 module.exports = router;
