@@ -5,19 +5,21 @@ const router = require("express").Router();
 
 const Game = require("../models/Game.model");
 
-
+// GET -list-
 router.get("/list", (req, res) => {
     Game.find()
     .then(games => {
         res.render('game/game-list', { games })
     })
     .catch(err => console.log(err))
-})
+});
 
+// GET -create-
 router.get("/create", (req, res) => {
     res.render('game/add-game')
-})
+});
 
+// POST -create-
 router.post("/create", (req, res) => {
 const { name, genre, image, description, rating } = req.body;
 Game.create({name, genre, image, description, rating})
@@ -25,8 +27,9 @@ Game.create({name, genre, image, description, rating})
         res.redirect('/game/list')
     })
     .catch(error => console.log(error));
-})
+});
 
+// GET -:gameId- 
 router.get("/:gameId", (req, res) => {
     const { gameId } = req.params;
     Game.findOne({_id: gameId})
@@ -34,6 +37,6 @@ router.get("/:gameId", (req, res) => {
         res.render('game/game-details', { game })
     })
     .catch(error => console.log(error));
-})
+});
 
 module.exports = router;
