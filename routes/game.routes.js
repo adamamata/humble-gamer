@@ -5,6 +5,7 @@ const router = require("express").Router();
 
 const Game = require("../models/Game.model");
 
+
 router.get("/list", (req, res) => {
     Game.find()
     .then(games => {
@@ -26,8 +27,8 @@ Game.create({name, genre, image, description, rating})
     .catch(error => console.log(error));
 })
 
-router.get("/game:Id", (req, res) => {
-    const {gameId} = req.params
+router.get("/:gameId", (req, res) => {
+    const { gameId } = req.params;
     Game.findOne({id: gameId})
     .then(game => {
         res.render('game/game-details', { game })
