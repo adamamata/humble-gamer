@@ -29,7 +29,7 @@ Game.create({name, genre, image, description, rating})
 
 router.get("/:gameId", (req, res) => {
     const { gameId } = req.params;
-    Game.findOne({id: gameId})
+    Game.findOne({_id: gameId})
     .then(game => {
         res.render('game/game-details', { game })
     })
