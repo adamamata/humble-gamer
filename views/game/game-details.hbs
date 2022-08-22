@@ -6,7 +6,7 @@
   <p>Description: {{game.description}} </p>
   <p>Rating: {{game.rating}} </p>
 </div>
-
+{{#if currentUser.isAdmin}}
 <div>
   <h4>Admin Controls:</h4>
   <a href="/game/{{game._id}}/edit"> Edit </a>
@@ -14,3 +14,4 @@
       <button type="submit">Delete</button>
     </form>
 </div> 
+{{/if}}

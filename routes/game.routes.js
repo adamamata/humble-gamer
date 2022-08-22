@@ -37,7 +37,7 @@ router.get("/:gameId", isLoggedIn, (req, res) => {
     const { currentUser } = req.session;
     Game.findOne({_id: gameId})
         .then(game => {
-            res.render('game/game-details', { game })
+            res.render('game/game-details', { game, currentUser })
         })
         .catch(error => console.log(error));
 });
@@ -61,8 +61,6 @@ router.post("/:gameId/edit", (req, res) => {
             res.redirect('/game/list');
         })
         .catch(err => console.error(err));
-  
-
 });
 
 router.post("/:gameId/delete", isAdmin, (req, res) => {
