@@ -8,6 +8,11 @@
     <input type="text" name="displayName" placeholder="John Smith">
     <label for="password-input">Password:</label>
     <input type="password" name="password" placeholder="**********">
+    <label for="isAdmin-input">Admin?</label>
+    <select name="isAdmin">
+        <option value="false">No</option>
+        <option value="true">Yes</option>
+    </select>
     <button type="submit">Create Account</button>
 </form>
 {{#if errorMessage}}

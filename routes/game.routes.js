@@ -5,6 +5,7 @@ const User = require("../models/User.model");
 const Comment = require("../models/Comment.model");
 const { isLoggedIn } = require("../middleware/route-guard");
 const { isLoggedOut } = require("../middleware/route-guard");
+const { isAdmin } = require("../middleware/route-guard");
 
 // GET -list-
 router.get("/list", isLoggedIn, (req, res) => {
@@ -41,13 +42,15 @@ router.get("/:gameId", isLoggedIn, (req, res) => {
 });
 
 // GET -:gameId/edit-
-router.get("/:gameId/edit", isLoggedIn, (req, res) => {
+router.get("/:gameId/edit", isLoggedIn, isAdmin, (req, res) => {
+    const { currentUser } = req.session;
+    console.log(currentUser);
     const { gameId } = req.params;
     Game.findById({_id: gameId})
-    .then(game => {
-        res.render('game/edit-game', { game })
-    })
-    .catch(error => console.log(error));
+        .then(game => {
+            res.render('game/edit-game', { game })
+        })
+        .catch(error => console.log(error));
 });
 
 // POST -:gameId/edit-
@@ -63,7 +66,7 @@ router.post("/:gameId/edit", (req, res) => {
 
 });
 
-router.post("/:gameId/delete", (req, res) => {
+router.post("/:gameId/delete", isAdmin, (req, res) => {
     const { gameId } = req.params;
     const { name, genre, image, description, rating } = req.body;
     Game.findByIdAndDelete( gameId, { name, genre, image, description, rating  })

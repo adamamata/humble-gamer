@@ -1,11 +1,15 @@
 <h1>Game details</h1>
-<h3>  {{ game.name }} </h3>
-<img src="{{game.image}}">
-<p>Genre: {{game.genre}} </p>
-<p>Description: {{game.description}} </p>
-<p>Rating: {{game.rating}} </p>
-<a href="/game/{{game._id}}/edit"> Edit </a>
-<form action="/game/{{game._id}}/delete" method="post">
-    <button type="submit">Delete</button>
-  </form>
-
+<div>
+  <h3>  {{ game.name }} </h3>
+  <img src="{{game.image}}">
+  <p>Genre: {{game.genre}} </p>
+  <p>Description: {{game.description}} </p>
+  <p>Rating: {{game.rating}} </p>
+</div>
+<div>
+  <h5>Admin Controls:</h5>
+  <a href="/game/{{game._id}}/edit"> Edit </a>
+  <form action="/game/{{game._id}}/delete" method="post">
+      <button type="submit">Delete</button>
+    </form>
+</div> 
