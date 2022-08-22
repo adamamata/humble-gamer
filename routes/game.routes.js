@@ -88,7 +88,7 @@ router.post("/:gameId/edit", (req, res) => {
 router.post("/:gameId/delete", isAdmin, (req, res) => {
     const { gameId } = req.params;
     const { name, genre, image, description, rating } = req.body;
-    Game.findByIdAndDelete( gameId, { name, genre, image, description, rating  })
+    Game.findByIdAndDelete( gameId, { name, genre, image, description, rating })
     .then(() => {
         res.redirect('/game/list')
     })
