@@ -1,4 +1,4 @@
-
+// Global Variables
 const router = require("express").Router();
 const Game = require("../models/Game.model");
 const User = require("../models/User.model");
@@ -48,7 +48,7 @@ router.get("/:gameId/edit", isLoggedIn, (req, res) => {
         res.render('game/edit-game', { game })
     })
     .catch(error => console.log(error));
-})
+});
 
 // POST -:gameId/edit-
 router.post("/:gameId/edit", (req, res) => {
@@ -60,5 +60,6 @@ router.post("/:gameId/edit", (req, res) => {
         })
         .catch(err => console.error(err));
   
-})
+});
+
 module.exports = router;
