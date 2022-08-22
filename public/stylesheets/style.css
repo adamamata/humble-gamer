@@ -15,3 +15,7 @@ h1 {
 .profile-photo {
   width: 350px;
 }
+
+#navbarNav a:hover {
+  color: #8D9797;
+}
