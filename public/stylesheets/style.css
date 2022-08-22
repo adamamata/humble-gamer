@@ -15,3 +15,11 @@ h1 {
 .profile-photo {
   width: 350px;
 }
+
+.wrap {
+  background-image: url(/images/uwp1959689.jpeg);
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
