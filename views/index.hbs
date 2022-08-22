@@ -1,5 +1,6 @@
 <div>
     <h1>Welcome, {{currentUser.displayName}}</h1>
+    <img src="{{currentUser.image}}">
     {{#if currentUser.isAdmin}}
     <h2>-Admin Account-</h2>
     {{/if}}
@@ -10,4 +11,7 @@
 </div>
 <div>
     <a href="/auth/logout">Logout</a>
+</div>
+<div>
+    <a href="/profile/upload-photo">Upload profile photo</a>
 </div>

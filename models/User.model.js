@@ -12,7 +12,8 @@ const userSchema = new Schema(
     displayName: {type: String, trim: true, required: true},
 
     password: { type: String, required: true },
-    isAdmin: {type: Boolean, default: false}
+    isAdmin: {type: Boolean, default: false},
+    image: {type: String, default: ""}
   }
 );
 
