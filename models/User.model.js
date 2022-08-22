@@ -10,11 +10,8 @@ const userSchema = new Schema(
     username: {type: String, trim: true, required: true},
     email: {type: String, required: true},
     displayName: {type: String, trim: true, required: true},
-    password: {
-      type: String, required: true,
-      // validate: [validatePassword, 'Please input a valid password'],
-      match: [/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*]).{8,}$/, 'Please input a valid password']
-    },
+
+    password: { type: String, required: true },
     isAdmin: {type: Boolean, default: false}
   }
 );
