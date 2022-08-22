@@ -1,4 +1,9 @@
-<h1>Welcome, {{currentUser.displayName}}</h1>
+<div>
+    <h1>Welcome, {{currentUser.displayName}}</h1>
+    {{#if currentUser.isAdmin}}
+    <h2>-Admin Account-</h2>
+    {{/if}}
+</div>
 <div>
     <a href="/game/create">Add a game</a>
     <a href="/game/list">See games</a>

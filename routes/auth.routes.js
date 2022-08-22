@@ -16,7 +16,7 @@ router.get('/signup', isLoggedOut, (req, res) => {
 
 // POST -signup-
 router.post('/signup', (req, res) => {
-    const { username, email, displayName, password } = req.body
+    const { username, email, displayName, password, isAdmin } = req.body
 
     if (!username || !email || !displayName || !password){
         res.render('auth/signup', { errorMessage: "Please enter data in all fields."});
@@ -33,7 +33,8 @@ router.post('/signup', (req, res) => {
                     username,
                     email,
                     displayName,
-                    password: hashPassword
+                    password: hashPassword,
+                    isAdmin
                 }
             );
         })

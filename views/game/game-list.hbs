@@ -1,10 +1,11 @@
-<h1> List of games</h1>
-
-{{#each games}}
-<h3> {{ this.name }} </h3>
-<img src="{{ this.image }}" width="300">
-<p>Genre: {{this.genre}}</p>
-<p>Description: {{this.description}}</p>
-<p>Rating: {{this.rating}}</p>
-<a href="/game/{{this._id}}"> View details </a>
-{{/each}}
+<h1>Games</h1>
+<div>
+    {{#each games}}
+    <h3> {{ this.name }} </h3>
+    <img src="{{ this.image }}" width="300">
+    <p>Genre: {{this.genre}}</p>
+    <p>Description: {{this.description}}</p>
+    <p>Rating: {{this.rating}}</p>
+    <a href="/game/{{this._id}}"> View details </a>
+    {{/each}}
+</div>
