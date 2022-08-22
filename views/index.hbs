@@ -3,11 +3,17 @@
     {{#if currentUser.isAdmin}}
     <h2>-Admin Account-</h2>
     {{/if}}
+    <img src="{{currentUser.image}}" class="profile-photo">
 </div>
 <div>
     {{!-- <a href="/game/create">Add a game</a>
     <a href="/game/list">See games</a> --}}
 </div>
 <div>
+
+
     {{!-- <a href="/auth/logout">Logout</a> --}}
+</div>
+<div>
+    <a href="/profile/upload-photo">Upload profile photo</a>
 </div>

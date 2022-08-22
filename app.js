@@ -23,6 +23,9 @@ require("./config")(app);
 require("./config/sessions.config")(app);
 
 // Route handling
+const profileRouter = require("./routes/profile.routes");
+app.use("/profile", profileRouter);
+
 const index = require("./routes/index.routes");
 app.use("/", index);
 
@@ -31,7 +34,6 @@ app.use("/auth", authRouter);
 
 const gameRouter = require("./routes/game.routes");
 app.use("/game", gameRouter);
-
 
 // Error handling
 require("./error-handling")(app);
