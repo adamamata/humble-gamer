@@ -10,3 +10,7 @@ a {
 h1 {
   color: 15px;
 }
+
+.profile-photo {
+  width: 350px;
+}
