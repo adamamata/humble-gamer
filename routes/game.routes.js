@@ -94,6 +94,6 @@ router.post("/:gameId/delete", isAdmin, (req, res) => {
     })
     .catch(err => console.log(err));
 
-})
+});
 
 module.exports = router;
