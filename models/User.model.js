@@ -14,7 +14,8 @@ const userSchema = new Schema(
       type: String, required: true,
       // validate: [validatePassword, 'Please input a valid password'],
       match: [/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*]).{8,}$/, 'Please input a valid password']
-    }
+    },
+    isAdmin: {type: Boolean, default: false}
   }
 );
 

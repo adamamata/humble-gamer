@@ -12,7 +12,15 @@ const isLoggedOut = ((req, res, next) => {
     next();
 });
 
+const isAdmin = ((req, res, next) => {
+    if (req.session.currentUser.isAdmin !== true){
+        return res.redirect('/game/list');
+    }
+    next();
+});
+
 module.exports = {
     isLoggedIn,
-    isLoggedOut
+    isLoggedOut,
+    isAdmin
 }

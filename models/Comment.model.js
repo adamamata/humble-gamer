@@ -8,6 +8,6 @@ const commentSchema = new Schema(
   }
 );
 
-const User = model("Comment", commentSchema);
+const Comment = model("Comment", commentSchema);
 
-module.exports = User;
+module.exports = Comment;
