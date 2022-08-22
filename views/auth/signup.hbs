@@ -7,7 +7,7 @@
     <label for="displayName-input">Display Name:</label>
     <input type="text" name="displayName" placeholder="John Smith">
     <label for="password-input">Password:</label>
-    <input type="password" name="password" placeholder="**********">
+    <input type="password" name="password" placeholder="**********" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters">
     <button type="submit">Create Account</button>
 </form>
 {{#if errorMessage}}
