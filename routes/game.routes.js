@@ -36,10 +36,32 @@ router.get("/:gameId", isLoggedIn, (req, res) => {
     const { gameId } = req.params;
     const { currentUser } = req.session;
     Game.findOne({_id: gameId})
+        .populate("comments")
+        .populate({
+            path: 'comments',
+            populate: {
+                path: "user",
+                model: "User"
+            }
+        })
         .then(game => {
-            res.render('game/game-details', { game, currentUser })
+            res.render('game/game-details', { game, currentUser });
         })
         .catch(error => console.log(error));
+});
+
+// POST -:gameId- 
+router.post('/:gameId', async (req, res) => {
+    const { gameId } = req.params;
+    const { comment } = req.body
+    const game = await Game.findOne({_id: gameId});
+    Comment.create({user: req.session.currentUser._id, comment})
+        .then(async(newComment) => {
+            game.comments.push(newComment._id);
+            await game.save();
+        })
+        .then(() => res.redirect(`/game/${gameId}`))
+        .catch((err) => console.log(err));
 });
 
 // GET -:gameId/edit-
