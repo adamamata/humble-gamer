@@ -34,6 +34,7 @@ Game.create({name, genre, image, description, rating})
 // GET -:gameId- 
 router.get("/:gameId", isLoggedIn, (req, res) => {
     const { gameId } = req.params;
+    const { currentUser } = req.session;
     Game.findOne({_id: gameId})
         .then(game => {
             res.render('game/game-details', { game })
@@ -43,8 +44,6 @@ router.get("/:gameId", isLoggedIn, (req, res) => {
 
 // GET -:gameId/edit-
 router.get("/:gameId/edit", isLoggedIn, isAdmin, (req, res) => {
-    const { currentUser } = req.session;
-    console.log(currentUser);
     const { gameId } = req.params;
     Game.findById({_id: gameId})
         .then(game => {

@@ -6,8 +6,9 @@
   <p>Description: {{game.description}} </p>
   <p>Rating: {{game.rating}} </p>
 </div>
+
 <div>
-  <h5>Admin Controls:</h5>
+  <h4>Admin Controls:</h4>
   <a href="/game/{{game._id}}/edit"> Edit </a>
   <form action="/game/{{game._id}}/delete" method="post">
       <button type="submit">Delete</button>
