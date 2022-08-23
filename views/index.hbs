@@ -1,6 +1,16 @@
-<h1>Welcome, {{currentUser.displayName}}!</h1>
-{{#if currentUser.isAdmin}}
-    <h2>-Admin Account-</h2>
-{{/if}}
-<img src="{{currentUser.image}}" class="profile-photo rounded">
-<a href="/profile/upload-photo">Upload profile photo</a>
+<div style="background-color: #EEEEEE">
+<br>
+<div class="container" style="width: 100vw; height: 100vh">
+    <div class="rounded-top text-white d-flex flex-column" style="background-color: #222831; height:200px;">
+        <h1 class="display-5" style="margin-left: 20px;">Welcome, {{currentUser.displayName}}</h1>
+        <div class="container">
+        {{#if currentUser.image}}
+        <a href="/profile/upload-photo"><img src="{{currentUser.image}}" class='rounded' style="width: 250px; margin-left: 20px;"></a>
+        {{else}}
+        <a href="/profile/upload-photo" style="margin-left: 20px; color: grey">Upload Photo</a>
+        {{/if}}
+        </div>
+    </div>
+    <div class="rounded-top d-flex" style="height: 65vh; background-color: #393E46; margin-top: 10px"></div>
+</div>
+</div>
