@@ -11,8 +11,9 @@
         {{/if}}
         </div>
     </div>
-    <div class="rounded-top d-flex" style="height: 65vh; background-color: #393E46; margin-top: 10px">
-         <div style="margin-left: 20px" class="d-flex justify-content-around flex-wrap">
+    <div class="rounded-top d-flex flex-column justify-content-start" style="height: 65vh; background-color: #52616B; margin-top: 10px">
+        <h1 class="display-6 text-white" style="margin: 20px; font-size: 30px"><u>Your favourite games</u></h1>
+        <div style="margin-left: 20px" class="d-flex justify-content-around flex-wrap">
             {{#each user.favouriteGames}}   
                 <img class='rounded' src="{{image}}" style="width: 300px;">
             {{/each}}
