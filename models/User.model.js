@@ -13,7 +13,8 @@ const userSchema = new Schema(
 
     password: { type: String, required: true },
     isAdmin: {type: Boolean, default: false},
-    image: {type: String, default: ""}
+    image: {type: String, default: ""},
+    favouriteGames:[{type: Schema.Types.ObjectId, ref: "Game"}]
   }
 );
 

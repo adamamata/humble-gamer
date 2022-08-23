@@ -2,10 +2,10 @@
 <br>
 <div class="container" style="width: 100vw; height: 100vh">
     <div class="rounded-top text-white d-flex flex-column" style="background-color: #222831; height:200px;">
-        <h1 class="display-5" style="margin-left: 20px;">Welcome, {{currentUser.displayName}}</h1>
+        <h1 class="display-5" style="margin-left: 20px;">Welcome, {{user.displayName}}</h1>
         <div class="container">
-        {{#if currentUser.image}}
-        <a href="/profile/upload-photo"><img src="{{currentUser.image}}" class='rounded' style="width: 250px; margin-left: 20px;"></a>
+        {{#if user.image}}
+        <a href="/profile/upload-photo"><img src="{{user.image}}" class='rounded' style="width: 250px; margin-left: 20px;"></a>
         {{else}}
         <a href="/profile/upload-photo" style="margin-left: 20px; color: grey">Upload Photo</a>
         {{/if}}
