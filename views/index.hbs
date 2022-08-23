@@ -2,15 +2,27 @@
 <br>
 <div class="container" style="width: 100vw; height: 100vh">
     <div class="rounded-top text-white d-flex flex-column" style="background-color: #222831; height:200px;">
-        <h1 class="display-5" style="margin-left: 20px;">Welcome, {{currentUser.displayName}}</h1>
+        <h1 class="display-5" style="margin-left: 20px;">Welcome, {{user.displayName}}</h1>
         <div class="container">
-        {{#if currentUser.image}}
-        <a href="/profile/upload-photo"><img src="{{currentUser.image}}" class='rounded' style="width: 250px; margin-left: 20px;"></a>
+        {{#if user.image}}
+        <a href="/profile/upload-photo"><img src="{{user.image}}" class='rounded' style="width: 250px; margin-left: 20px;"></a>
         {{else}}
         <a href="/profile/upload-photo" style="margin-left: 20px; color: grey">Upload Photo</a>
         {{/if}}
         </div>
     </div>
-    <div class="rounded-top d-flex" style="height: 65vh; background-color: #393E46; margin-top: 10px"></div>
+    <div class="rounded-top d-flex flex-column justify-content-start" style="height: 65vh; background-color: #52616B; margin-top: 10px">
+        <h1 class="display-6 text-white" style="margin: 20px; font-size: 30px"><u>Your favourite games</u></h1>
+        <div style="margin-left: 20px" class="d-flex justify-content-around flex-wrap">
+            {{#each user.favouriteGames}}   
+                <img class='rounded' src="{{image}}" style="width: 300px;">
+            {{/each}}
+        </div>
+        <div style="margin-left: 20px" class="d-flex justify-content-around text-white flex-wrap">
+            {{#each user.favouriteGames}}   
+                <h4>{{name}}</h4>
+            {{/each}}
+        </div>
+    </div>
 </div>
 </div>

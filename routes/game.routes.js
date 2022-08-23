@@ -45,6 +45,21 @@ Game.create({name, genre, image, description, rating})
     .catch(error => console.log(error));
 });
 
+router.post('/:gameId/favourites', async (req, res ) => {
+    try {
+        const { gameId } = req.params;
+        const { currentUser } = req.session; 
+        const game = await Game.findById(gameId);
+        const user = await User.findById(currentUser._id);
+        user.favouriteGames.push(game);
+        await user.save();
+        res.redirect('/');
+    }
+    catch (err) {
+        console.log(err)
+    }
+});
+
 // GET -:gameId- 
 router.get("/:gameId", isLoggedIn, (req, res) => {
     const { gameId } = req.params;
