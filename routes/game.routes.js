@@ -94,6 +94,7 @@ router.post("/:gameId/edit", (req, res) => {
     const { name, genre, image, description, rating } = req.body;
         Game.findByIdAndUpdate( gameId, { name, genre, image, description, rating  })
         .then(() => {
+            //need to update or save what has been selected
             res.redirect('/game/list');
         })
         .catch(err => console.error(err));

@@ -43,13 +43,14 @@
         <h5 class="modal-title" id="staticBackdrop1">Create</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <form action="/game/create" method="post">
       <div class="modal-body">
          Please enter the required fields down below
 
          <p></p>
 
-
-        <label for="">Name: <p></p>
+         
+        <label for="name" id="name">Name: <p></p>
          <input type="text" name="name" id="name">
          </label>
 
@@ -83,7 +84,6 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-        <form action="/game/create" method="post">
         <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
