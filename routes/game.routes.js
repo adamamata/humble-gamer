@@ -7,6 +7,7 @@ const { isLoggedIn } = require("../middleware/route-guard");
 const { isLoggedOut } = require("../middleware/route-guard");
 const { isAdmin } = require("../middleware/route-guard");
 const axios = require("axios");
+const { updateOne } = require("../models/User.model");
 const apiKey = process.env.API_KEY ||'50c84e8a12de4985bebf0f23e0d6ed5d';
 const apiBase = "https://api.rawg.io/api/games?key="
 
