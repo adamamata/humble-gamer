@@ -1,6 +1,4 @@
 body {
-  
-  
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -13,5 +11,9 @@ h1 {
 }
 
 .profile-photo {
-  width: 350px;
+  width: 400px;
+}
+
+#navbarNav a:hover {
+  color: #8D9797;
 }
