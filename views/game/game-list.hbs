@@ -3,7 +3,7 @@
     <input type="text" class="form-control me-2" name="searchItem" placeholder="Search the web for more games">
     <button type="submit" class="btn btn-secondary">Search</button>
 </form>
-<div>
+{{!-- <div>
     {{#each games}}
     <h3> {{ this.name }} </h3>
     <img src="{{ this.image }}" width="300">
@@ -12,4 +12,24 @@
     <p>Rating: {{this.rating}}</p>
     <a href="/game/{{this._id}}"> View details </a>
     {{/each}}
+</div> --}}
+<div class="card-deck"></div>
+<div class="d-flex justify-content-start flex-wrap">
+    {{#each games}}
+  <div class="card" style="width: 25%; max-height: 40%;">
+    <img src="{{this.image}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{this.name}}</h5>
+      <p class="card-text">Genre: {{this.genre}}</p>
+      <p class="card-text">Description: {{this.description}}</p>
+      <p class="card-text">Rating: {{this.rating}}</p>
+      <a href="/game/{{this._id}}"class="card-text"><small class="text-muted">See Details</small></a>
+    </div>
+  </div>
+  <div class="card-footer">
+    </div>
+    {{/each}}
 </div>
+  
+</div>
+
