@@ -24,7 +24,7 @@
             <!-- Password input -->
                   <div class="form-outline mb-4">
                       <label for="password-input">Password:</label>
-                      <input type="password" name="password" placeholder="**********" class="form-control" />
+                      <input type="password" name="password" placeholder="**********" class="form-control" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"/>
                   </div>
             <!-- Admin input -->
                   <div class="form-outline mb-4">
