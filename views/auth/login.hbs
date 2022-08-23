@@ -1,12 +1,31 @@
-<h2>Login</h2>
-    <form action="/auth/login" method="POST">
-        <label for="username-input">Username:</label>
-        <input type="text" name="username" placeholder="Enter here">
-        <label for="password-input">Password:</label>
-        <input type="password" name="password" placeholder="**********">
-        <button type="submit">Login</button>
-    </form>
-<div>
-{{#if errorMessage}}
-    <p>{{errorMessage}}</p>
-{{/if}}
+<div id="login-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="login-form">
+          <form action="/auth/login" method="POST" class="mt-5">  
+            <div class="card-body px-4 py-5 px-md-5 d-flex flex-column">
+                <h2 class="display-3">Login</h2>
+            <!-- Username input -->
+                <div class="form-outline mb-4">
+                  <label for="username-input">Username:</label>
+                  <input type="text" name="username" placeholder="Enter here"class="form-control" />
+                </div>
+            <!-- Password input -->
+                  <div class="form-outline mb-4">
+                      <label for="password-input">Password:</label>
+                      <input type="password" name="password" placeholder="**********" class="form-control" />
+                  </div>
+                <button type="submit" class="btn btn-dark btn-block mb-4">Login</button> 
+                <div>
+                {{#if errorMessage}}
+                    <p>{{errorMessage}}</p>
+                {{/if}} 
+            </div>   
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
