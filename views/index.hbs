@@ -11,6 +11,17 @@
         {{/if}}
         </div>
     </div>
-    <div class="rounded-top d-flex" style="height: 65vh; background-color: #393E46; margin-top: 10px"></div>
+    <div class="rounded-top d-flex" style="height: 65vh; background-color: #393E46; margin-top: 10px">
+         <div style="margin-left: 20px" class="d-flex justify-content-around flex-wrap">
+            {{#each user.favouriteGames}}   
+                <img class='rounded' src="{{image}}" style="width: 300px;">
+            {{/each}}
+        </div>
+        <div style="margin-left: 20px" class="d-flex justify-content-around text-white flex-wrap">
+            {{#each user.favouriteGames}}   
+                <h4>{{name}}</h4>
+            {{/each}}
+        </div>
+    </div>
 </div>
 </div>
