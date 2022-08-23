@@ -6,6 +6,20 @@ const Comment = require("../models/Comment.model");
 const { isLoggedIn } = require("../middleware/route-guard");
 const { isLoggedOut } = require("../middleware/route-guard");
 const { isAdmin } = require("../middleware/route-guard");
+const axios = require("axios");
+const apiKey = process.env.API_KEY ||'50c84e8a12de4985bebf0f23e0d6ed5d';
+const apiBase = "https://api.rawg.io/api/games?key="
+
+router.get('/results', (req, res) => {
+   const { searchItem } = req.query;
+   axios
+    .get(`${apiBase}${apiKey}&search=${searchItem}&page_size=5`)
+    .then((response) => {
+        const games = response.data.results;
+        res.render("game/search-results", { games });
+    })
+    .catch(err => console.log(err));
+});
 
 // GET -list-
 router.get("/list", isLoggedIn, (req, res) => {
@@ -93,7 +107,6 @@ router.post("/:gameId/delete", isAdmin, (req, res) => {
         res.redirect('/game/list')
     })
     .catch(err => console.log(err));
-
 });
 
 module.exports = router;
