@@ -35,6 +35,7 @@ app.use("/auth", authRouter);
 const gameRouter = require("./routes/game.routes");
 app.use("/game", gameRouter);
 
+
 // Error handling
 require("./error-handling")(app);
 
