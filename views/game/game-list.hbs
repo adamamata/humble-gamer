@@ -1,8 +1,8 @@
 <h1>Games</h1>
-<form class="d-flex pe-5">
-            <input type="text" class="form-control me-2">
-            <button type="submit" class="btn btn-secondary">Search</button>
-         </form>
+<form class="d-flex pe-5" method="get" action="/game/results">
+    <input type="text" class="form-control me-2" name="searchItem" placeholder="Search the web for more games">
+    <button type="submit" class="btn btn-secondary">Search</button>
+</form>
 <div>
     {{#each games}}
     <h3> {{ this.name }} </h3>
