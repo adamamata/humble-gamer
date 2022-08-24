@@ -11,17 +11,17 @@
         {{/if}}
         </div>
     </div>
+    
     <div class="rounded-top d-flex flex-column justify-content-start" style="height: 65vh; background-color: #52616B; margin-top: 10px">
-        <h1 class="display-6 text-white" style="margin: 20px; font-size: 30px"><u>Your favourite games</u></h1>
-        <div style="margin-left: 20px" class="d-flex justify-content-around flex-wrap">
+        {{#if user.favouriteGames}}
+        <h1 class="display-6 text-white" style="margin: 20px; font-size: 30px">Your favourite games</h1>
+        {{else}}
+        <h1 class="display-6 text-white" style="margin: 20px; font-size: 30px">You haven't added any favourites yet.</h1>
+        {{/if}}
+        <div style="margin-left: 20px" class="d-flex justify-content-start flex-wrap">
             {{#each user.favouriteGames}}   
-                <img class='rounded' src="{{image}}" style="width: 300px;">
-            {{/each}}
-        </div>
-        <div style="margin-left: 20px" class="d-flex justify-content-around text-white flex-wrap">
-            {{#each user.favouriteGames}}   
-                <h4>{{name}}</h4>
-            {{/each}}
+                <a href="game/{{_id}}"><img class='rounded' width="300px" height="170px" src="{{image}}" style="margin: 5px"></a>
+            {{/each}}   
         </div>
     </div>
 </div>
