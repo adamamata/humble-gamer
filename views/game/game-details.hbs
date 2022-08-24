@@ -92,22 +92,22 @@
   <form action="/game/{{game._id}}/edit" method="post">
     <h3>  Editing: {{ game.name }} </h3>
     <label for="">Name<p></p></label>
-    <input type="text" name="name" id="name" value="{{name}}">
+    <input type="text" name="name" id="name" value="{{game.name}}">
     <br>
     <label for="genre" id="genre">Genre<p></p></label>
-    <input type="text" name="genre" id="genre" value="{{genre}}">
+    <input type="text" name="genre" id="genre" value="{{game.genre}}">
     <br>
     <label for="image">Image<p></p></label>
-    <input type="text" name="image" id="image" value="{{image}}">
+    <input type="text" name="image" id="image" value="{{game.image}}">
     <br>
     <label for="description">Details<p></p></label>
-    <input type="text" name="description" id="description" value="{{description}}">
+    <input type="text" name="description" id="description" value="{{game.description}}">
     <br>
     <label for="rating">Rating</label>
-    <input type="text" name="rating" id="rating" value="{{rating}}">
+    <input type="text" name="rating" id="rating" value="{{game.rating}}">
     <br>
     <br>
-    <button type="submit">Save Changes</button>
+    <button type="submit" class="btn btn-light">Save Changes</button>
   </form>
 </div>
   <div>

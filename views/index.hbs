@@ -5,7 +5,7 @@
         <h1 class="display-5" style="margin-left: 20px;">Welcome, {{user.displayName}}</h1>
         <div class="container">
         {{#if user.image}}
-        <a href="/profile/upload-photo"><img src="{{user.image}}" class='rounded img-fluid' style="width: 250px; margin-left: 20px; max-height: 165px;"></a>
+        <a href="/profile/upload-photo"><img src="{{user.image}}" class='rounded img-fluid' style="width: 250px; margin-left: 20px; max-height: 165px; border: 5px solid white">
         {{else}}
         <a href="/profile/upload-photo" style="margin-left: 20px; color: grey">Upload Photo</a>
         {{/if}}
@@ -19,7 +19,7 @@
         {{/if}}
         <div style="margin-left: 20px" class="d-flex justify-content-start flex-wrap">
             {{#each user.favouriteGames}}   
-            <div class="bg-image hover-zoom">
+            <div class="bg-image hover-zoom rounded">
                 <a href="game/{{_id}}"><img class='rounded' width="300px" height="170px" src="{{image}}" style="margin: 5px"></a>
             </div>
             {{/each}}   
