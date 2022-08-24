@@ -10,6 +10,7 @@
       <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
    </head>
    <body>
+      
       <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
 
          <a href="/" class="navbar-brand mb-0 ps-5 h1">
@@ -22,21 +23,95 @@
 
          <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-               <li class="nav-item active">
-                  <a href="/auth/login" class="nav-link active"> Login </a></li>
-               <li class="nav-item active">
+                 <li class="nav-item active">
                   <a href="/auth/signup" class="nav-link active"> Signup</a></li>
                <li class="nav-item active">
-                  <a href="/auth/logout" class="nav-link active">Logout</a></li>
+                  <a href="/auth/login" class="nav-link active"> Login </a></li>
+                  {{!-- <li class="nav-item active"> --}}
+                  {{!-- <a href="/game/create" class="nav-link active">Create</a></li> --}}
                   <li class="nav-item active">
-                  <a href="/game/create" class="nav-link active">Add</a></li>
-                  <li class="nav-item active">
-                  <a href="/game/list" class="nav-link active">Games</a></li>
+                  <a href="/game/list" class="nav-link active">Game List</a></li>
+                  <button type="submit" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop1"> Create a game </button></li>
+                 <button type="submit" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop2"> Logout </button></li>
             </ul>
          </div>
       </nav>
+      <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdrop1">Create</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form action="/game/create" method="post">
+      <div class="modal-body">
+         Please enter the required fields down below
+
+         <p></p>
+
+         
+        <label for="name" id="name">Name: <p></p>
+         <input type="text" name="name" id="name">
+         </label>
+
+         <p></p>
+
+         <label for="genre" id="genre">Genre: <p></p>
+         <input type="text" name="genre" id="genre">
+         </label>
+
+
+         <p></p>
+
+
+         <label for="image">Image: <p></p> <input type="text" name="image" id="image">
+         </label>
+
+
+         <p></p>
+
+
+         <label for="description">Description: <p></p>
+         <input type="text" name="description" id="description">
+         </label>
+
+
+          <p></p>
+
+         <label for="rating">Rating: <p></p>
+         <input type="text" name="rating" id="rating">
+         </label>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdrop2">Proceed to logout?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you would like to logout?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+        <form action="/auth/logout" method="POST">
+        <button type="submit" class="btn btn-primary">Yes</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
       <br>
       <br>
+      
       {{{body}}}
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
