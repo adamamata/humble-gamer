@@ -31,11 +31,35 @@
 <br>
 
 {{#if currentUser.isAdmin}}
-<div>
-  <h4>Admin Controls:</h4>
-  <a href="/game/{{game._id}}/edit"> Edit </a>
-  <form action="/game/{{game._id}}/delete" method="post">
-      <button type="submit">Delete</button>
-    </form>
-</div> 
+
+<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+  Admin Controls
+</button>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Admin Portal</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+     Please make sure you are following our guidelines when deleting content!
+    </div>
+    <div class="dropdown mt-3">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+        Options
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="/game/{{game._id}}/edit">Edit Game</a></li>
+      </ul>
+      <form action="/game/{{game._id}}/delete" method="post">
+      <br>
+      <br>
+      <button class="btn btn-secondary" type="submit">
+        Delete
+      </button>
+      </form>
+    </div>
+  </div>
+</div>
 {{/if}}
