@@ -5,6 +5,10 @@ const { Schema, model } = require("mongoose");
 //   return re.test(password);
 // }
 
+function arrayLimit(val) {
+  return val.length <= 12;
+}
+
 const userSchema = new Schema(
   {
     username: {type: String, trim: true, required: true},
@@ -14,7 +18,11 @@ const userSchema = new Schema(
     password: { type: String, required: true },
     isAdmin: {type: Boolean, default: false},
     image: {type: String, default: ""},
-    favouriteGames:[{type: Schema.Types.ObjectId, ref: "Game"}]
+    // favouriteGames:[{type: Schema.Types.ObjectId, ref: "Game"}]
+    favouriteGames: {
+      type: [{type: Schema.Types.ObjectId, ref: 'Game'}],
+      validate: [arrayLimit, 'Limit is 12.']
+    }
   }
 );
 
