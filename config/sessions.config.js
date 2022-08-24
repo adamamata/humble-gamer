@@ -15,7 +15,7 @@ app.use(
             maxAge: (1000 * 60 * 60 * 24) * 30
         },
         store: new MongoStore({
-        mongoUrl: 'MONGO_URI'
+        mongoUrl: process.env.MONGO_URI
         })
     })
 )}
