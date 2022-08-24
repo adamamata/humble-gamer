@@ -32,26 +32,45 @@
 
 {{#if currentUser.isAdmin}}
 
-<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas">
   Admin Controls
 </button>
 
-<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Admin Portal</h5>
+    <h5 class="offcanvas-title" id="offcanvasLabel">Admin Portal</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
     <div>
      Please make sure you are following our guidelines when deleting content!
     </div>
-    <div class="dropdown mt-3">
-      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-        Options
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="/game/{{game._id}}/edit">Edit Game</a></li>
-      </ul>
+    <div>
+<br>
+<form action="/game/{{game._id}}/edit" method="post">
+<h3>  Editing: {{ game.name }} </h3>
+<label for="">Name<p></p></label>
+<input type="text" name="name" id="name" value="{{name}}">
+<br>
+<label for="genre" id="genre">Genre<p></p></label>
+<input type="text" name="genre" id="genre" value="{{genre}}">
+<br>
+<label for="image">Image<p></p></label>
+<input type="text" name="image" id="image" value="{{image}}">
+<br>
+<label for="description">Description<p></p></label>
+<input type="text" name="description" id="description" value="{{description}}">
+<br>
+<label for="rating">Rating</label>
+<input type="text" name="rating" id="rating" value="{{rating}}">
+<br>
+<br>
+<button type="submit">Save Changes</button>
+
+</form>
+
+    </div>
+    <div>
       <form action="/game/{{game._id}}/delete" method="post">
       <br>
       <br>
@@ -59,7 +78,9 @@
         Delete
       </button>
       </form>
+        </div>
     </div>
   </div>
 </div>
 {{/if}}
+
