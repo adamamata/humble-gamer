@@ -100,7 +100,7 @@
     <label for="image">Image<p></p></label>
     <input type="text" name="image" id="image" value="{{image}}">
     <br>
-    <label for="description">Description<p></p></label>
+    <label for="description">Details<p></p></label>
     <input type="text" name="description" id="description" value="{{description}}">
     <br>
     <label for="rating">Rating</label>
@@ -112,7 +112,6 @@
 </div>
   <div>
     <form action="/game/{{game._id}}/delete" method="post">
-      <br>
       <br>
       <button class="btn btn-secondary" type="submit">
         Delete
