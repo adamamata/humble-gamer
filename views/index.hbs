@@ -5,13 +5,12 @@
         <h1 class="display-5" style="margin-left: 20px;">Welcome, {{user.displayName}}</h1>
         <div class="container">
         {{#if user.image}}
-        <a href="/profile/upload-photo"><img src="{{user.image}}" class='rounded' style="width: 250px; margin-left: 20px;"></a>
+        <a href="/profile/upload-photo"><img src="{{user.image}}" class='rounded img-fluid' style="width: 250px; margin-left: 20px; max-height: 165px;"></a>
         {{else}}
         <a href="/profile/upload-photo" style="margin-left: 20px; color: grey">Upload Photo</a>
         {{/if}}
         </div>
     </div>
-    
     <div class="rounded-top d-flex flex-column justify-content-start" style="height: 65vh; background-color: #52616B; margin-top: 10px">
         {{#if user.favouriteGames}}
         <h1 class="display-6 text-white" style="margin: 20px; font-size: 30px">Your favourite games</h1>
@@ -20,9 +19,11 @@
         {{/if}}
         <div style="margin-left: 20px" class="d-flex justify-content-start flex-wrap">
             {{#each user.favouriteGames}}   
+            <div class="bg-image hover-zoom">
                 <a href="game/{{_id}}"><img class='rounded' width="300px" height="170px" src="{{image}}" style="margin: 5px"></a>
+            </div>
             {{/each}}   
         </div>
     </div>
-</div>
+    </div>
 </div>
