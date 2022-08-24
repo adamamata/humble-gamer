@@ -78,7 +78,6 @@
       <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas">
   Admin Controls
 </button>
-
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
   <div class="offcanvas-header">
     <h5 class="offcanvas-title" id="offcanvasLabel">Admin Portal</h5>
@@ -89,46 +88,44 @@
      Please make sure you are following our guidelines when deleting content!
     </div>
     <div>
-<br>
-<form action="/game/{{game._id}}/edit" method="post">
-<h3>  Editing: {{ game.name }} </h3>
-<label for="">Name<p></p></label>
-<input type="text" name="name" id="name" value="{{name}}">
-<br>
-<label for="genre" id="genre">Genre<p></p></label>
-<input type="text" name="genre" id="genre" value="{{genre}}">
-<br>
-<label for="image">Image<p></p></label>
-<input type="text" name="image" id="image" value="{{image}}">
-<br>
-<label for="description">Description<p></p></label>
-<input type="text" name="description" id="description" value="{{description}}">
-<br>
-<label for="rating">Rating</label>
-<input type="text" name="rating" id="rating" value="{{rating}}">
-<br>
-<br>
-<button type="submit">Save Changes</button>
-
-</form>
-
-    </div>
-    <div>
-      <form action="/game/{{game._id}}/delete" method="post">
+    <br>
+  <form action="/game/{{game._id}}/edit" method="post">
+    <h3>  Editing: {{ game.name }} </h3>
+    <label for="">Name<p></p></label>
+    <input type="text" name="name" id="name" value="{{name}}">
+    <br>
+    <label for="genre" id="genre">Genre<p></p></label>
+    <input type="text" name="genre" id="genre" value="{{genre}}">
+    <br>
+    <label for="image">Image<p></p></label>
+    <input type="text" name="image" id="image" value="{{image}}">
+    <br>
+    <label for="description">Description<p></p></label>
+    <input type="text" name="description" id="description" value="{{description}}">
+    <br>
+    <label for="rating">Rating</label>
+    <input type="text" name="rating" id="rating" value="{{rating}}">
+    <br>
+    <br>
+    <button type="submit">Save Changes</button>
+  </form>
+</div>
+  <div>
+    <form action="/game/{{game._id}}/delete" method="post">
       <br>
       <br>
       <button class="btn btn-secondary" type="submit">
         Delete
       </button>
-      </form>
-        </div>
+    </form>
+    </div>
     </div>
   </div>
 </div>
-      </div>
-    </div>
-  </div>
-  {{/if}}
+</div>
+</div>
+</div>
+{{/if}}
 </div>
 </div>
 
