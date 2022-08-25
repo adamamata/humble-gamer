@@ -37,7 +37,7 @@ router.get("/create", isLoggedIn, (req, res) => {
 });
 
 // POST -create-
-router.post("/create", (req, res) => {
+router.post("/create", isLoggedIn, (req, res) => {
 const { name, genre, image, description, rating } = req.body;
 Game.create({name, genre, image, description, rating})
     .then(newGame => {
