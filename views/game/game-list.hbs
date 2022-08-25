@@ -1,15 +1,15 @@
-<div class="d-flex flex-column justify-content-center align-items-center" style="margin-top: 20px">
-<h1>Games</h1>
-<form class="d-flex pe-5" method="get" action="/game/results">
-    <input type="text" class="form-control me-2" name="searchItem" placeholder="Search the web for more games" style="width: 50vw">
-    <button type="submit" class="btn btn-dark">Search</button>
-</form>
-</div>
+<div style="background: linear-gradient(176deg, rgba(215,205,104,1) 0%, rgba(247,73,73,1) 100%);">
+  <div class="d-flex flex-column justify-content-center align-items-center">
+    <h1 class="text-black" style="margin-top: 20px;">Games</h1>
+    <form class="d-flex pe-5" method="get" action="/game/results">
+      <input type="text" class="form-control me-2" name="searchItem" placeholder="Search the web for more games" style="width: 50vw">
+      <button type="submit" class="btn btn-dark">Search</button>
+    </form>
+  </div>
 <br>
-<div class="card-deck"></div>
 <div class="d-flex justify-content-center flex-wrap">
-    {{#each games}}
-  <div class="card" style="width: 25%; max-height: 40%; margin-bottom: 20px">
+  {{#each games}}
+  <div class="card" style="width: 25%; max-height: 40%; margin-bottom: 20px; margin-left: 20px;">
     <img src="{{this.image}}" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">{{this.name}}</h5>
@@ -19,8 +19,15 @@
       <a href="/game/{{this._id}}"class="card-text"><small class="text-muted">See Details</small></a>
     </div>
   </div>
-  <div class="card-footer">
-    </div>
-    {{/each}}
+  {{/each}}
 </div>
+</div>
+<footer> 
+    <div class="d-flex justify-content-center bg-dark">
+      <a class="btn btn-primary" style="background-color: #0082ca; margin-right: 5px" href="https://www.linkedin.com/in/adamamata/" role="button"><i class="bi bi-linkedin"></i></a>
+      <a class="btn btn-primary" style="background-color: #333333; margin-right: 5px" href="https://github.com/adamamata" role="button"><i class="bi bi-github"></i></a>
+      <a class="btn btn-primary" style="background-color: #0082ca; margin-right: 5px" href="https://www.linkedin.com/in/michael-hodgkins/" role="button"><i class="bi bi-linkedin"></i></a>
+      <a class="btn btn-primary" style="background-color: #333333; margin-right: 5px  " href="https://github.com/michaelhodgkins" role="button"><i class="bi bi-github"></i></a>  
+    </div>
+</footer>
 </div>
