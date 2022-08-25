@@ -1,4 +1,7 @@
 # Humble Gamer
+## ATTENTION
+Merge bug caused all commits to be attributed to @adamamata. This project had equal contributions between both creators.
+
 ## Description
 Humble Gamer is a CRUD web application that uses the RAWG API to search and store your favourite games. 
 
